@@ -5,13 +5,13 @@ import org.openqa.selenium.support.FindBy;
 import utils.Utilities;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class alertHandlingPage {
+public class AlertHandlingPage {
 
     public @FindBy(xpath = "/html/body/div[2]/div[1]/div[1]/div/div[2]/a") WebElement linkWaitConditions;
     public @FindBy(id = "alert_trigger") WebElement btnShowAlert;
     public @FindBy(id = "alert_handled_badge") WebElement txtAlertHandle;
 
-    public alertHandlingPage(){
+    public AlertHandlingPage(){
         super();
     }
 

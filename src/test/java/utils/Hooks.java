@@ -11,12 +11,12 @@ public class Hooks{
     @BeforeAll
     public static void setUp(){
         System.out.println("Entrando al Before");
-        driver = driverFactory.getDriver();
+        driver = DriverFactory.getDriver();
     }
 
     @AfterAll
     public static void tearDown(){
         System.out.println("Cerrando navegador");
-        driverFactory.closeDriver();
+        DriverFactory.closeDriver();
     }
 }

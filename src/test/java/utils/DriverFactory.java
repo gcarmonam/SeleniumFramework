@@ -3,13 +3,13 @@ package utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import pageLocators.alertHandlingPage;
+import pageLocators.AlertHandlingPage;
 import java.time.Duration;
 
-public class driverFactory {
+public class DriverFactory {
 
     protected static WebDriver driver;
-    public static alertHandlingPage alertHandlingPage;
+    public static AlertHandlingPage alertHandlingPage;
 
     public static WebDriver getDriver(){
         if (driver == null){
@@ -21,7 +21,7 @@ public class driverFactory {
                 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
             //Inicializa PageObjets
-            alertHandlingPage = PageFactory.initElements(driver, alertHandlingPage.class);
+            alertHandlingPage = PageFactory.initElements(driver, AlertHandlingPage.class);
         }
         return driver;
     }

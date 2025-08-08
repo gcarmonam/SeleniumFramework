@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Utilities extends driverFactory {
+public class Utilities extends DriverFactory {
 
     public static void alertAccept(){
         try{

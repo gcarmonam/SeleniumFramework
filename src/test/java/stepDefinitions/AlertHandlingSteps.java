@@ -3,9 +3,9 @@ package stepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utils.driverFactory;
+import utils.DriverFactory;
 
-public class alertHandlingSteps extends driverFactory {
+public class AlertHandlingSteps extends DriverFactory {
 
     @Given("the user in on the homepage")
     public void the_user_in_on_the_homepage() {
