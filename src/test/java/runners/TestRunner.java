@@ -9,8 +9,8 @@ import org.junit.platform.suite.api.Suite;
 @Suite
 @IncludeEngines("cucumber")
 @SelectFile("src/test/resources/features")
-@ConfigurationParameter(key= Constants.GLUE_PROPERTY_NAME, value = "stepDefinitions")
-//@ConfigurationParameter(key= Constants.PLUGIN_PROPERTY_NAME, value = "pretty.html, html:target/cucumber-report.html")
+@ConfigurationParameter(key= Constants.GLUE_PROPERTY_NAME, value = "stepDefinitions, utils")
+@ConfigurationParameter(key= Constants.PLUGIN_PROPERTY_NAME, value = "pretty, html:target/cucumber-report.html")
 
 public class TestRunner {
 }

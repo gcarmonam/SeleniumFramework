@@ -7,9 +7,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Utils extends driverFactory {
+public class Utilities extends driverFactory {
 
-    public void alertAccept(){
+    public static void alertAccept(){
         try{
             WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(5));
             wait.until(ExpectedConditions.alertIsPresent());
