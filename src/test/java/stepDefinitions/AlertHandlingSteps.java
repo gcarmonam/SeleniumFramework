@@ -22,6 +22,15 @@ public class AlertHandlingSteps extends DriverFactory {
         alertHandlingPage.btnAlert();
     }
 
+    @When("they click the Show prompt button")
+    public void they_click_the_show_prompt_button() {
+        alertHandlingPage.btnPrompt();
+    }
+    @When("they cancel the alert")
+    public void they_cancel_the_alert() {
+        alertHandlingPage.alertCancelled();
+    }
+
     @When("they accept the alert")
     public void they_accept_the_alert() {
        alertHandlingPage.alertOK();
@@ -29,6 +38,18 @@ public class AlertHandlingSteps extends DriverFactory {
 
     @Then("the message {string} should be displayed")
     public void the_message_should_be_displayed(String alertHandle) {
-        alertHandlingPage.alertHandle();
+        switch (alertHandle){
+            case "Alert handled":
+                alertHandlingPage.alertHandle(alertHandle);
+                break;
+            case "Cancelled":
+                alertHandlingPage.alertCencelled(alertHandle);
+                break;
+            default:
+                System.out.println("Unknow text");
+        }
+
     }
+
+
 }

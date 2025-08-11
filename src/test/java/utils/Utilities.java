@@ -20,4 +20,15 @@ public class Utilities extends DriverFactory {
         }
     }
 
+    public static void alertCancelled(){
+        try{
+            WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert alert = driver.switchTo().alert();
+            alert.dismiss();
+        } catch (NoAlertPresentException e) {
+            System.out.println("No se encontró el elemento Alert");
+        }
+    }
+
 }

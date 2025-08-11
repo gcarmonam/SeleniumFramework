@@ -40,7 +40,7 @@ public class FirstTest {
 
 
         //Interactuar con elemento Show alert
-        WebElement alertButton = driver.findElement(By.id("alert_trigger"));
+        WebElement alertButton = driver.findElement(By.id("prompt_trigger"));
         alertButton.click();
 
         //Cambiar foco a Alert y aceptar
@@ -48,15 +48,15 @@ public class FirstTest {
             WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(5));
             wait.until(ExpectedConditions.alertIsPresent());
             Alert alert = driver.switchTo().alert();
-            alert.accept();
+            alert.dismiss();
         } catch (NoAlertPresentException e) {
             System.out.println("No se encontró el elemento Alert");
         }
 
 
-        WebElement alertHandle = driver.findElement(By.id("alert_handled_badge"));
+        WebElement alertHandle = driver.findElement(By.id("confirm_cancelled_badge"));
         String actualText = alertHandle.getText();
-        String expectedText = "Alert handled";
+        String expectedText = "Cancelled";
         //Assert
         assertEquals(expectedText, actualText, "El texto de handle no es el esperado");
 

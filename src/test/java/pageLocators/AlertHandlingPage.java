@@ -9,7 +9,9 @@ public class AlertHandlingPage {
 
     public @FindBy(xpath = "/html/body/div[2]/div[1]/div[1]/div/div[2]/a") WebElement linkWaitConditions;
     public @FindBy(id = "alert_trigger") WebElement btnShowAlert;
+    public @FindBy(id = "prompt_trigger") WebElement btnShowPrompt;
     public @FindBy(id = "alert_handled_badge") WebElement txtAlertHandle;
+    public @FindBy(id = "confirm_cancelled_badge") WebElement txtAlertCancelled;
 
     public AlertHandlingPage(){
         super();
@@ -24,15 +26,29 @@ public class AlertHandlingPage {
         btnShowAlert.click();
     }
 
+    public void btnPrompt(){
+        btnShowPrompt.click();
+    }
+
+
     public void alertOK(){
         Utilities.alertAccept();
     }
 
-    public void alertHandle(){
+    public void alertCancelled(){
+        Utilities.alertCancelled();
+    }
+
+    public void alertHandle(String alertHandle){
         String actualText = txtAlertHandle.getText();
-        String expectedText = "Alert handled";
         //Assert
-        assertEquals(expectedText, actualText, "El texto de handle no es el esperado");
+        assertEquals(alertHandle, actualText, "El texto de handle no es el esperado");
+    }
+
+    public void alertCencelled(String alertHandle){
+        String actualText = txtAlertCancelled.getText();
+        //Assert
+        assertEquals(alertHandle, actualText, "El texto de handle no es el esperado");
     }
 
 }
