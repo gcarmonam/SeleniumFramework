@@ -1,8 +1,11 @@
 package stepDefinitions;
 
+import com.aventstack.extentreports.ExtentTest;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utils.DriverFactory;
+import utils.ReportManager;
+import utils.Utilities;
 
 public class LoginSteps extends DriverFactory {
 
