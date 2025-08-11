@@ -36,6 +36,16 @@ public class AlertHandlingSteps extends DriverFactory {
        alertHandlingPage.alertOK();
     }
 
+    @When("they click the Trigger button")
+    public void they_click_the_trigger_button() {
+        alertHandlingPage.btnTrigger();
+    }
+
+    @When("they click the newly visible button")
+    public void they_click_the_newly_visible_button() {
+        alertHandlingPage.btnTarget();
+    }
+
     @Then("the message {string} should be displayed")
     public void the_message_should_be_displayed(String alertHandle) {
         switch (alertHandle){
@@ -47,6 +57,9 @@ public class AlertHandlingSteps extends DriverFactory {
                 break;
             case "OK":
                 alertHandlingPage.alertOk(alertHandle);
+                break;
+            case "Can you see me?":
+                alertHandlingPage.alertClick(alertHandle);
                 break;
             default:
                 System.out.println("Unknow text");
