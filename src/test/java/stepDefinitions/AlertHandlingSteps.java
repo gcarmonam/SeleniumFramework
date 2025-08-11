@@ -45,11 +45,11 @@ public class AlertHandlingSteps extends DriverFactory {
             case "Cancelled":
                 alertHandlingPage.alertCencelled(alertHandle);
                 break;
+            case "OK":
+                alertHandlingPage.alertOk(alertHandle);
+                break;
             default:
                 System.out.println("Unknow text");
         }
-
     }
-
-
 }

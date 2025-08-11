@@ -12,6 +12,7 @@ public class AlertHandlingPage {
     public @FindBy(id = "prompt_trigger") WebElement btnShowPrompt;
     public @FindBy(id = "alert_handled_badge") WebElement txtAlertHandle;
     public @FindBy(id = "confirm_cancelled_badge") WebElement txtAlertCancelled;
+    public @FindBy(id = "confirm_ok_badge") WebElement txtAlertOk;
 
     public AlertHandlingPage(){
         super();
@@ -47,6 +48,12 @@ public class AlertHandlingPage {
 
     public void alertCencelled(String alertHandle){
         String actualText = txtAlertCancelled.getText();
+        //Assert
+        assertEquals(alertHandle, actualText, "El texto de handle no es el esperado");
+    }
+
+    public void alertOk(String alertHandle){
+        String actualText = txtAlertOk.getText();
         //Assert
         assertEquals(alertHandle, actualText, "El texto de handle no es el esperado");
     }
